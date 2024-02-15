@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CloudUI</class>
+ <widget class="QDialog" name="CloudUI">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>524</width>
+    <height>397</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <widget class="QTabWidget" name="cloudTabWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="accountTab">
+      <attribute name="icon">
+       <iconset resource="packetsender.qrc">
+        <normaloff>:/icons/ic_person_black_24dp_2x.png</normaloff>:/icons/ic_person_black_24dp_2x.png</iconset>
+      </attribute>
+      <attribute name="title">
+       <string>Account</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>Packet Sender Cloud</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>Username</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="usernameEdit">
+           <property name="maxLength">
+            <number>30</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>Password</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="passwordEdit">
+           <property name="maxLength">
+            <number>50</number>
+           </property>
+           <property name="echoMode">
+            <enum>QLineEdit::Password</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_7">
+         <item>
+          <widget class="QLabel" name="passwordConfirmLabel">
+           <property name="text">
+            <string>Confirm Password</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="passwordConfirmEdit">
+           <property name="maxLength">
+            <number>50</number>
+           </property>
+           <property name="echoMode">
+            <enum>QLineEdit::Password</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="rememberLoginCheck">
+         <property name="text">
+          <string>Remember Login</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_8">
+         <item>
+          <widget class="QPushButton" name="loginButton">
+           <property name="text">
+            <string>Login</string>
+           </property>
+           <property name="default">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="createAccountButton">
+           <property name="text">
+            <string>Create a new account.</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_4">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_9">
+         <item>
+          <widget class="QPushButton" name="privacyButton">
+           <property name="text">
+            <string>Privacy</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="termsButton">
+           <property name="text">
+            <string>Terms</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_5">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="cloudLinkButton">
+           <property name="text">
+            <string>cloud.packetsender.com/help</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="importTab">
+      <attribute name="icon">
+       <iconset resource="packetsender.qrc">
+        <normaloff>:/icons/ic_cloud_download_black_24dp_2x.png</normaloff>:/icons/ic_cloud_download_black_24dp_2x.png</iconset>
+      </attribute>
+      <attribute name="title">
+       <string>Import</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <item>
+          <widget class="QLineEdit" name="importURLEdit"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="importURLButton">
+           <property name="text">
+            <string>Import From URL</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_5">
+         <property name="text">
+          <string>Description</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTableWidget" name="packetSetTable">
+         <property name="editTriggers">
+          <set>QAbstractItemView::NoEditTriggers</set>
+         </property>
+         <property name="selectionMode">
+          <enum>QAbstractItemView::SingleSelection</enum>
+         </property>
+         <property name="selectionBehavior">
+          <enum>QAbstractItemView::SelectRows</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="viewPublicButton">
+         <property name="text">
+          <string>View URL</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_10">
+         <item>
+          <widget class="QPushButton" name="deletePacketButton">
+           <property name="maximumSize">
+            <size>
+             <width>150</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Delete Packet Set</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="importPacketsButton">
+           <property name="text">
+            <string>Import Packet Set</string>
+           </property>
+           <property name="default">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="exportTab">
+      <attribute name="icon">
+       <iconset resource="packetsender.qrc">
+        <normaloff>:/icons/ic_cloud_upload_black_24dp_2x.png</normaloff>:/icons/ic_cloud_upload_black_24dp_2x.png</iconset>
+      </attribute>
+      <attribute name="title">
+       <string>Save / Share</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QLabel" name="shareBlurbLabel">
+         <property name="text">
+          <string>You are sharing.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_6">
+         <item>
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>Packet Set Name</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="packetSetNameEdit"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_11">
+         <item>
+          <widget class="QLabel" name="label_7">
+           <property name="text">
+            <string>Public Path</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="publicPathEdit"/>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_6">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="makePublicCheck">
+           <property name="text">
+            <string>Make Public</string>
+           </property>
+           <property name="icon">
+            <iconset resource="packetsender.qrc">
+             <normaloff>:/icons/ic_share_black_24dp_2x.png</normaloff>:/icons/ic_share_black_24dp_2x.png</iconset>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>Description</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTextEdit" name="descriptionExportEdit">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <spacer name="horizontalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="saveToCloudButton">
+           <property name="text">
+            <string>Save to Packet Sender Cloud</string>
+           </property>
+           <property name="icon">
+            <iconset resource="packetsender.qrc">
+             <normaloff>:/icons/ic_cloud_upload_black_24dp_2x.png</normaloff>:/icons/ic_cloud_upload_black_24dp_2x.png</iconset>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>cloudTabWidget</tabstop>
+  <tabstop>usernameEdit</tabstop>
+  <tabstop>passwordEdit</tabstop>
+  <tabstop>passwordConfirmEdit</tabstop>
+  <tabstop>rememberLoginCheck</tabstop>
+  <tabstop>loginButton</tabstop>
+  <tabstop>createAccountButton</tabstop>
+  <tabstop>privacyButton</tabstop>
+  <tabstop>termsButton</tabstop>
+  <tabstop>cloudLinkButton</tabstop>
+  <tabstop>importURLEdit</tabstop>
+  <tabstop>importURLButton</tabstop>
+  <tabstop>packetSetTable</tabstop>
+  <tabstop>viewPublicButton</tabstop>
+  <tabstop>deletePacketButton</tabstop>
+  <tabstop>importPacketsButton</tabstop>
+  <tabstop>packetSetNameEdit</tabstop>
+  <tabstop>publicPathEdit</tabstop>
+  <tabstop>makePublicCheck</tabstop>
+  <tabstop>descriptionExportEdit</tabstop>
+  <tabstop>saveToCloudButton</tabstop>
+ </tabstops>
+ <resources>
+  <include location="packetsender.qrc"/>
+ </resources>
+ <connections/>
+</ui>

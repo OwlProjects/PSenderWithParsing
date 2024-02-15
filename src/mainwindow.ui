@@ -1,0 +1,789 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>909</width>
+    <height>748</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout_4">
+    <item>
+     <widget class="QGroupBox" name="packetSetupGroup">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>150</height>
+       </size>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QLabel" name="serialNameLabel">
+           <property name="text">
+            <string>Name</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="packetNameEdit">
+           <property name="maximumSize">
+            <size>
+             <width>400</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="placeholderText">
+            <string>Packet Name</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="requestLayout">
+         <item>
+          <widget class="QLabel" name="requestLabel">
+           <property name="text">
+            <string>Request</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="requestPathEdit">
+           <property name="placeholderText">
+            <string>URL path</string>
+           </property>
+           <property name="clearButtonEnabled">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="asciiLayout">
+         <item>
+          <widget class="QLabel" name="asciiLabel">
+           <property name="text">
+            <string>ASCII</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="genPostDataButton">
+           <property name="text">
+            <string>Generate Data</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="packetASCIIEdit">
+           <property name="placeholderText">
+            <string>ASCII representation</string>
+           </property>
+           <property name="clearButtonEnabled">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="loadFileButton">
+           <property name="text">
+            <string>Load File</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="hexHorizLayout">
+         <item>
+          <widget class="QLabel" name="hexLabel">
+           <property name="text">
+            <string>HEX</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="packetHexEdit">
+           <property name="placeholderText">
+            <string>HEX representation</string>
+           </property>
+           <property name="clearButtonEnabled">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <layout class="QHBoxLayout" name="horizIPtestLayout">
+           <item>
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Address</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="packetIPEdit">
+             <property name="placeholderText">
+              <string>IPv4, IPv6, DNS Lookup</string>
+             </property>
+             <property name="clearButtonEnabled">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>Port</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="packetPortEdit">
+             <property name="maximumSize">
+              <size>
+               <width>100</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="inputMethodHints">
+              <set>Qt::ImhNone</set>
+             </property>
+             <property name="placeholderText">
+              <string>1 to 65535</string>
+             </property>
+             <property name="clearButtonEnabled">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_7">
+             <property name="text">
+              <string>Resend Delay</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="resendEdit">
+             <property name="maximumSize">
+              <size>
+               <width>100</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="placeholderText">
+              <string>0.0/blank off</string>
+             </property>
+             <property name="clearButtonEnabled">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="udptcpComboBox">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>130</width>
+               <height>20</height>
+              </size>
+             </property>
+             <item>
+              <property name="text">
+               <string>TCP</string>
+              </property>
+              <property name="icon">
+               <iconset resource="packetsender.qrc">
+                <normaloff>:/icons/tx_tcp.png</normaloff>:/icons/tx_tcp.png</iconset>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>UDP</string>
+              </property>
+              <property name="icon">
+               <iconset resource="packetsender.qrc">
+                <normaloff>:/icons/tx_udp.png</normaloff>:/icons/tx_udp.png</iconset>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>SSL</string>
+              </property>
+              <property name="icon">
+               <iconset resource="packetsender.qrc">
+                <normaloff>:/icons/tx_ssl.png</normaloff>:/icons/tx_ssl.png</iconset>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>HTTP Get</string>
+              </property>
+              <property name="icon">
+               <iconset resource="packetsender.qrc">
+                <normaloff>:/icons/tx_http.png</normaloff>:/icons/tx_http.png</iconset>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>HTTP Post</string>
+              </property>
+              <property name="icon">
+               <iconset resource="packetsender.qrc">
+                <normaloff>:/icons/tx_http.png</normaloff>:/icons/tx_http.png</iconset>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>HTTPS Get</string>
+              </property>
+              <property name="icon">
+               <iconset resource="packetsender.qrc">
+                <normaloff>:/icons/tx_http.png</normaloff>:/icons/tx_http.png</iconset>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>HTTPS Post</string>
+              </property>
+              <property name="icon">
+               <iconset resource="packetsender.qrc">
+                <normaloff>:/icons/tx_http.png</normaloff>:/icons/tx_http.png</iconset>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="testPacketButton">
+             <property name="text">
+              <string>Send</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="savePacketButton">
+             <property name="text">
+              <string>Save</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSplitter" name="splitter">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <widget class="QWidget" name="layoutWidget">
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QLineEdit" name="searchLineEdit">
+            <property name="maximumSize">
+             <size>
+              <width>500</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="placeholderText">
+             <string>Search Saved Packets...</string>
+            </property>
+            <property name="clearButtonEnabled">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_7">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="generatePanelButton">
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Generate Panel!</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="deletePacketButton">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="text">
+             <string>Delete Saved Packet</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="persistentTCPCheck">
+            <property name="text">
+             <string>Persistent TCP</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="packetsTable">
+          <property name="dragEnabled">
+           <bool>false</bool>
+          </property>
+          <property name="alternatingRowColors">
+           <bool>true</bool>
+          </property>
+          <property name="selectionMode">
+           <enum>QAbstractItemView::ExtendedSelection</enum>
+          </property>
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectRows</enum>
+          </property>
+          <property name="sortingEnabled">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_13"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="layoutWidget1">
+       <layout class="QVBoxLayout" name="verticalLayout_10">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_16">
+          <item>
+           <widget class="QPushButton" name="trafficLogClearButton">
+            <property name="text">
+             <string>Clear Log</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="parseTrafficLogButton">
+            <property name="text">
+             <string>Parse</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="logTrafficCheck">
+            <property name="text">
+             <string>Log Traffic</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="saveLogButton">
+            <property name="text">
+             <string>Save Log</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="saveTrafficPacket">
+            <property name="text">
+             <string>Save Traffic Packet</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="toClipboardButton">
+            <property name="text">
+             <string>Copy to Clipboard</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTableView" name="trafficLogTable">
+          <property name="editTriggers">
+           <set>QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed</set>
+          </property>
+          <property name="dragEnabled">
+           <bool>false</bool>
+          </property>
+          <property name="alternatingRowColors">
+           <bool>true</bool>
+          </property>
+          <property name="selectionMode">
+           <enum>QAbstractItemView::SingleSelection</enum>
+          </property>
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectRows</enum>
+          </property>
+          <property name="sortingEnabled">
+           <bool>true</bool>
+          </property>
+          <property name="wordWrap">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>909</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="actionSettings"/>
+    <addaction name="actionImport_Packets"/>
+    <addaction name="actionExport_Packets"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+    <addaction name="actionHelp"/>
+    <addaction name="actionForums"/>
+    <addaction name="actionFollow_NagleCode"/>
+    <addaction name="actionConnect_on_LinkedIn"/>
+    <addaction name="actionDonate_Thank_You"/>
+   </widget>
+   <widget class="QMenu" name="menuTools">
+    <property name="title">
+     <string>&amp;Tools</string>
+    </property>
+    <addaction name="actionCloud"/>
+    <addaction name="actionSubnet_Calculator"/>
+    <addaction name="actionIntense_Traffic_Generator"/>
+    <addaction name="actionWake_On_LAN_Magic_Packet"/>
+   </widget>
+   <widget class="QMenu" name="menuMulitcast">
+    <property name="title">
+     <string>&amp;Multicast</string>
+    </property>
+    <addaction name="actionJoin_IPv4"/>
+   </widget>
+   <widget class="QMenu" name="menuPanels">
+    <property name="title">
+     <string>Panels</string>
+    </property>
+    <addaction name="actionPanel_Generator"/>
+    <addaction name="actionNew_Panel"/>
+   </widget>
+   <widget class="QMenu" name="menuTests">
+    <property name="title">
+     <string>Tests</string>
+    </property>
+    <addaction name="actionTestContextMenu"/>
+    <addaction name="actionTest_JSON"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuTools"/>
+   <addaction name="menuMulitcast"/>
+   <addaction name="menuPanels"/>
+   <addaction name="menuHelp"/>
+   <addaction name="menuTests"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset resource="packetsender.qrc">
+     <normaloff>:/icons/power-off.png</normaloff>:/icons/power-off.png</iconset>
+   </property>
+   <property name="text">
+    <string>E&amp;xit</string>
+   </property>
+  </action>
+  <action name="actionSettings">
+   <property name="icon">
+    <iconset resource="packetsender.qrc">
+     <normaloff>:/icons/cog.png</normaloff>:/icons/cog.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Settings</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="icon">
+    <iconset resource="packetsender.qrc">
+     <normaloff>:/pslogo_bw.png</normaloff>:/pslogo_bw.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;About</string>
+   </property>
+  </action>
+  <action name="actionImport_Packets">
+   <property name="icon">
+    <iconset resource="packetsender.qrc">
+     <normaloff>:/icons/download.png</normaloff>:/icons/download.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Import Database</string>
+   </property>
+  </action>
+  <action name="actionExport_Packets">
+   <property name="icon">
+    <iconset resource="packetsender.qrc">
+     <normaloff>:/icons/upload.png</normaloff>:/icons/upload.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Export Database</string>
+   </property>
+  </action>
+  <action name="actionPersistent_Connection">
+   <property name="text">
+    <string>Persistent Connection</string>
+   </property>
+  </action>
+  <action name="actionSubnet_Calculator">
+   <property name="icon">
+    <iconset resource="packetsender.qrc">
+     <normaloff>:/icons/calculator.png</normaloff>:/icons/calculator.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Subnet Calculator</string>
+   </property>
+  </action>
+  <action name="actionDonate_Thank_You">
+   <property name="icon">
+    <iconset resource="packetsender.qrc">
+     <normaloff>:/icons/heart.png</normaloff>:/icons/heart.png</iconset>
+   </property>
+   <property name="text">
+    <string>D&amp;onate (Thank You!)</string>
+   </property>
+  </action>
+  <action name="actionDocumentation">
+   <property name="text">
+    <string>Documentation</string>
+   </property>
+  </action>
+  <action name="actionHelp">
+   <property name="icon">
+    <iconset resource="packetsender.qrc">
+     <normaloff>:/icons/question-circle.png</normaloff>:/icons/question-circle.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Documentation</string>
+   </property>
+  </action>
+  <action name="actionExport_Packets_JSON">
+   <property name="text">
+    <string>Export To Cloud</string>
+   </property>
+  </action>
+  <action name="actionCloud">
+   <property name="icon">
+    <iconset resource="packetsender.qrc">
+     <normaloff>:/icons/ic_cloud_done_black_24dp_2x.png</normaloff>:/icons/ic_cloud_done_black_24dp_2x.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Cloud Save and Share</string>
+   </property>
+  </action>
+  <action name="actionJoin_IPv4">
+   <property name="icon">
+    <iconset resource="packetsender.qrc">
+     <normaloff>:/icons/multicast-icon.png</normaloff>:/icons/multicast-icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Join/Leave IPv4</string>
+   </property>
+  </action>
+  <action name="actionAndroid_App">
+   <property name="icon">
+    <iconset resource="packetsender.qrc">
+     <normaloff>:/icons/android-icon.png</normaloff>:/icons/android-icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Android App</string>
+   </property>
+  </action>
+  <action name="actioniOS_App">
+   <property name="icon">
+    <iconset resource="packetsender.qrc">
+     <normaloff>:/icons/apple-icon.png</normaloff>:/icons/apple-icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>iOS App</string>
+   </property>
+  </action>
+  <action name="actionFollow_NagleCode">
+   <property name="icon">
+    <iconset resource="packetsender.qrc">
+     <normaloff>:/icons/twitter-icon.png</normaloff>:/icons/twitter-icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Follow on Twitter</string>
+   </property>
+  </action>
+  <action name="actionConnect_on_LinkedIn">
+   <property name="icon">
+    <iconset resource="packetsender.qrc">
+     <normaloff>:/icons/linkedin-icon.png</normaloff>:/icons/linkedin-icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Connect on LinkedIn</string>
+   </property>
+  </action>
+  <action name="actionIntense_Traffic_Generator">
+   <property name="icon">
+    <iconset resource="packetsender.qrc">
+     <normaloff>:/icons/bolt-icon.png</normaloff>:/icons/bolt-icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Intense &amp;Traffic Generator</string>
+   </property>
+  </action>
+  <action name="actionForums">
+   <property name="icon">
+    <iconset resource="packetsender.qrc">
+     <normaloff>:/icons/forum-icon.png</normaloff>:/icons/forum-icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Forums</string>
+   </property>
+  </action>
+  <action name="actionPanel_Generator">
+   <property name="text">
+    <string>Load Starter Panel</string>
+   </property>
+  </action>
+  <action name="actionNew_Panel">
+   <property name="text">
+    <string>Empty Panel Project</string>
+   </property>
+  </action>
+  <action name="actionWake_On_LAN_Magic_Packet">
+   <property name="icon">
+    <iconset resource="packetsender.qrc">
+     <normaloff>:/icons/outline_lightbulb_white_24dp.png</normaloff>:/icons/outline_lightbulb_white_24dp.png</iconset>
+   </property>
+   <property name="text">
+    <string>Wake-On-LAN / Magic Packet</string>
+   </property>
+  </action>
+  <action name="actionTestContextMenu">
+   <property name="text">
+    <string>TestContextMenu</string>
+   </property>
+  </action>
+  <action name="actionTest_JSON">
+   <property name="text">
+    <string>Test JSON</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="packetsender.qrc"/>
+ </resources>
+ <connections/>
+</ui>

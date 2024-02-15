@@ -1,0 +1,1210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Settings</class>
+ <widget class="QDialog" name="Settings">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1013</width>
+    <height>583</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QTabWidget" name="settingsTabWidget">
+     <property name="currentIndex">
+      <number>3</number>
+     </property>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>Network</string>
+      </attribute>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QGroupBox" name="groupBox">
+         <property name="title">
+          <string>Basic</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <widget class="QCheckBox" name="udpServerEnableCheck">
+            <property name="text">
+             <string>Enable UDP Servers</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <widget class="QLabel" name="udpServerLabel">
+              <property name="text">
+               <string>UDP Server Ports (comma-separated, 0 for random)</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="udpServerPortEdit">
+              <property name="text">
+               <string>0</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="tcpServerEnableCheck">
+            <property name="text">
+             <string>Enable TCP Servers</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_6">
+            <item>
+             <widget class="QLabel" name="tcpServerLabel">
+              <property name="text">
+               <string>TCP Server Port (comma-separated, 0 for random)</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="tcpServerPortEdit">
+              <property name="text">
+               <string>0</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="sslServerEnableCheck">
+            <property name="text">
+             <string>Enable SSL/TLS Servers</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_14">
+            <item>
+             <widget class="QLabel" name="label_20">
+              <property name="text">
+               <string>SSL Server Port (comma-separated, 0 for random)</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="sslServerPortEdit">
+              <property name="text">
+               <string>0</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_15">
+            <property name="text">
+             <string>Set the server ports to 0 if you want to run multiple Packet Sender instances.</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_16">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="translateMacroSendCheck">
+            <property name="text">
+             <string>Translate macros when sending</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="sendResponseSettingsCheck">
+            <property name="text">
+             <string>Send a basic response with macro support</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_7">
+            <item>
+             <widget class="QLabel" name="label_3">
+              <property name="text">
+               <string>Response Data</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="responsePacketBox"/>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_12">
+            <item>
+             <widget class="QLabel" name="label_6">
+              <property name="text">
+               <string>ASCII</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="asciiResponseEdit"/>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_10">
+            <item>
+             <widget class="QLabel" name="label_5">
+              <property name="text">
+               <string>HEX</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="hexResponseEdit"/>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_5">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_4">
+         <property name="title">
+          <string>Additional UDP/TCP/SSL Settings</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_7">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_16">
+            <item>
+             <widget class="QRadioButton" name="ipv4Radio">
+              <property name="text">
+               <string>IPv4 Only</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+              <attribute name="buttonGroup">
+               <string notr="true">buttonGroup</string>
+              </attribute>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="ipv6Radio">
+              <property name="text">
+               <string>IPv6 Only</string>
+              </property>
+              <attribute name="buttonGroup">
+               <string notr="true">buttonGroup</string>
+              </attribute>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_8">
+              <item>
+               <widget class="QRadioButton" name="ipSpecificRadio">
+                <property name="text">
+                 <string>Bind This:</string>
+                </property>
+                <attribute name="buttonGroup">
+                 <string notr="true">buttonGroup</string>
+                </attribute>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="bindIPAddress">
+                <property name="placeholderText">
+                 <string>Your IP</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <item>
+             <widget class="QLabel" name="multiSendDelayLabel">
+              <property name="text">
+               <string>Multi-Send Delay (sec)</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="multiSendDelayEdit">
+              <property name="placeholderText">
+               <string>0.0 for off</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <widget class="QLabel" name="label_2">
+              <property name="text">
+               <string>Cancel Resending after # packets</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="cancelResendNumEdit">
+              <property name="placeholderText">
+               <string>0 for off</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="attemptReceiveCheck">
+            <property name="text">
+             <string>Attempt Receive Before Send</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="delayAfterConnectCheck">
+            <property name="text">
+             <string>500 ms delay after connect (slow devices)</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="persistentTCPCheck">
+            <property name="text">
+             <string>Persistent TCP Connections</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="resolveDNSOnInputCheck">
+            <property name="text">
+             <string>Resolve DNS during input (old method)</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="ignoreSSLCheck">
+            <property name="text">
+             <string>Ignore SSL Errors (Wrong host, expired, self-signed, etc)</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="groupBox_2">
+            <property name="title">
+             <string/>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_2">
+             <item>
+              <widget class="QCheckBox" name="serverSnakeOilCheck">
+               <property name="text">
+                <string>SSL Server may use an internal snake oil cert</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_11">
+               <item>
+                <widget class="QLabel" name="label_17">
+                 <property name="text">
+                  <string>SSL CA Certificates</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="sslCaPath">
+                 <property name="placeholderText">
+                  <string>Path from where to load the CA certificats (leave empty for defaults)</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="sslCaPathBrowseButton">
+                 <property name="text">
+                  <string>Browse</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_121">
+               <item>
+                <widget class="QLabel" name="label_18">
+                 <property name="text">
+                  <string>SSL Local Certificate</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="sslLocalCertificatePath">
+                 <property name="placeholderText">
+                  <string>File path for the client side local certificate</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="sslLocalCertificatePathBrowseButton">
+                 <property name="text">
+                  <string>Browse</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_13">
+               <item>
+                <widget class="QLabel" name="label_19">
+                 <property name="text">
+                  <string>SSL Private Key</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="sslPrivateKeyPath">
+                 <property name="placeholderText">
+                  <string>File path for the client side private key</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="sslPrivateKeyPathBrowseButton">
+                 <property name="text">
+                  <string>Browse</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_4">
+      <attribute name="title">
+       <string>HTTP</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_8">
+       <item>
+        <widget class="QCheckBox" name="httpAdjustContentTypeCheck">
+         <property name="text">
+          <string>Automatically adjust ContentType when sending XML or JSON</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_19">
+         <item>
+          <spacer name="horizontalSpacer_4">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>578</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="genAuthCheck">
+           <property name="text">
+            <string>Generate Auth Header</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_17">
+         <item>
+          <widget class="QLabel" name="label_24">
+           <property name="text">
+            <string>Host</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="httpHostEdit"/>
+         </item>
+         <item>
+          <widget class="QLabel" name="httpKeyLabel">
+           <property name="text">
+            <string>Username/ClientID</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="httpUNEdit"/>
+         </item>
+         <item>
+          <widget class="QLabel" name="httpValueLabel">
+           <property name="text">
+            <string>Password/AccessCode</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="httpPWEdit"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="addCredentialButton">
+           <property name="text">
+            <string>HTTP Header</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QTableWidget" name="httpCredentialTable">
+         <property name="selectionBehavior">
+          <enum>QAbstractItemView::SelectRows</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_18">
+         <item>
+          <spacer name="horizontalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="httpDeleteHeaderButton">
+           <property name="text">
+            <string>Delete Header</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_3">
+      <attribute name="title">
+       <string>Display</string>
+      </attribute>
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_14">
+         <item>
+          <widget class="QGroupBox" name="displayGroupBox">
+           <property name="title">
+            <string>Saved Packet Display Order (Drag and Drop)</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_17">
+            <item>
+             <widget class="QListWidget" name="displayOrderList">
+              <item>
+               <property name="text">
+                <string>Name</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>To IP</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>From IP</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="displayGroupBoxTraffic">
+           <property name="title">
+            <string>Traffic Log Display Order (Drag and Drop)</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_15">
+            <item>
+             <widget class="QListWidget" name="displayOrderListTraffic">
+              <item>
+               <property name="text">
+                <string>Name</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>To IP</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>From IP</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="defaultDisplayButton">
+              <property name="text">
+               <string>Use Default Order</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacer_4">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>28</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="miscGroupBox">
+         <property name="title">
+          <string>Miscellaneous</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_18">
+          <item>
+           <widget class="QCheckBox" name="darkModeCheck">
+            <property name="text">
+             <string>Use Dark Theme (requires restart)</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="LanguageHolderLayout">
+            <item>
+             <widget class="QPushButton" name="chooseLanguageButton">
+              <property name="text">
+               <string>Language (Requires Restart)</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="copyUnformattedCheck">
+            <property name="text">
+             <string>Copy to Clipboard button uses raw data</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="rolling500entryCheck">
+            <property name="text">
+             <string>Rolling 100-entry traffic log</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="restoreSessionCheck">
+            <property name="text">
+             <string>Restore previous session</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="checkforUpdates">
+            <property name="text">
+             <string>Periodically check for updates</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="ellipsisCheck">
+            <property name="text">
+             <string>Use ellipsis [...] for long data entries (helps performance)</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="autolaunchStarterPanelButton">
+            <property name="text">
+             <string>Auto-Launch Starter Panel</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_6">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>200</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_8">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>Smart Responses</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_6">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_9">
+         <item>
+          <widget class="QCheckBox" name="smartResponseEnableCheck">
+           <property name="text">
+            <string>Send a Smart Response with Macro Support</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="smartResponsesGroup">
+         <property name="title">
+          <string/>
+         </property>
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="5" column="0">
+           <widget class="QLabel" name="label_13">
+            <property name="text">
+             <string>Response 5</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="3">
+           <widget class="QComboBox" name="responseEncodingBox4">
+            <item>
+             <property name="text">
+              <string>Mixed ASCII</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>HEX</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="4" column="4">
+           <widget class="QCheckBox" name="responseEnableCheck4">
+            <property name="text">
+             <string>Enable</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="label_12">
+            <property name="text">
+             <string>Response 4</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>If Packet data equals</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLabel" name="label_4">
+            <property name="text">
+             <string>Reply with</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <widget class="QLabel" name="label_7">
+            <property name="text">
+             <string>Encoding</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_9">
+            <property name="text">
+             <string>Response 1</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="responseIfEdit1"/>
+          </item>
+          <item row="1" column="2">
+           <widget class="QLineEdit" name="responseReplyEdit1"/>
+          </item>
+          <item row="1" column="3">
+           <widget class="QComboBox" name="responseEncodingBox1">
+            <item>
+             <property name="text">
+              <string>Mixed ASCII</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>HEX</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="responseIfEdit2"/>
+          </item>
+          <item row="1" column="4">
+           <widget class="QCheckBox" name="responseEnableCheck1">
+            <property name="text">
+             <string>Enable</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <widget class="QLineEdit" name="responseReplyEdit2"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_10">
+            <property name="text">
+             <string>Response 2</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="3">
+           <widget class="QComboBox" name="responseEncodingBox2">
+            <item>
+             <property name="text">
+              <string>Mixed ASCII</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>HEX</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_11">
+            <property name="text">
+             <string>Response 3</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="4">
+           <widget class="QCheckBox" name="responseEnableCheck2">
+            <property name="text">
+             <string>Enable</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="2">
+           <widget class="QLineEdit" name="responseReplyEdit3"/>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLineEdit" name="responseIfEdit3"/>
+          </item>
+          <item row="3" column="4">
+           <widget class="QCheckBox" name="responseEnableCheck3">
+            <property name="text">
+             <string>Enable</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="3">
+           <widget class="QComboBox" name="responseEncodingBox3">
+            <item>
+             <property name="text">
+              <string>Mixed ASCII</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>HEX</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QLineEdit" name="responseIfEdit4"/>
+          </item>
+          <item row="4" column="2">
+           <widget class="QLineEdit" name="responseReplyEdit4"/>
+          </item>
+          <item row="5" column="1">
+           <widget class="QLineEdit" name="responseIfEdit5"/>
+          </item>
+          <item row="5" column="2">
+           <widget class="QLineEdit" name="responseReplyEdit5"/>
+          </item>
+          <item row="5" column="4">
+           <widget class="QCheckBox" name="responseEnableCheck5">
+            <property name="text">
+             <string>Enable</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="3">
+           <widget class="QComboBox" name="responseEncodingBox5">
+            <item>
+             <property name="text">
+              <string>Mixed ASCII</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>HEX</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_5">
+            <item>
+             <widget class="QLabel" name="label_8">
+              <property name="text">
+               <string>Available macros: {{DATE}} {{TIME}} {{RANDOM}} {{UNIXTIME}} {{UNIQUE}}</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_14">
+              <property name="text">
+               <string>Packet Sender will swap macro with a real value before sending</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_20">
+            <item>
+             <widget class="QLabel" name="label_21">
+              <property name="text">
+               <string>{{DATE}} format (Requires Restart)</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="dateFormat">
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>16777215</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="dateFormatExample">
+              <property name="text">
+               <string>Example</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_5">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_21">
+            <item>
+             <widget class="QLabel" name="label_22">
+              <property name="text">
+               <string>{{TIME}} format (Requires Restart)</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="timeFormat">
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>16777215</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="timeFormatExample">
+              <property name="text">
+               <string>Example</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_6">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_15">
+     <item>
+      <widget class="QPushButton" name="documentationButton">
+       <property name="text">
+        <string>Online Documentation</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QDialogButtonBox" name="buttonBox">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="standardButtons">
+        <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>udpServerEnableCheck</tabstop>
+  <tabstop>udpServerPortEdit</tabstop>
+  <tabstop>tcpServerEnableCheck</tabstop>
+  <tabstop>tcpServerPortEdit</tabstop>
+  <tabstop>sslServerEnableCheck</tabstop>
+  <tabstop>sslServerPortEdit</tabstop>
+  <tabstop>sendResponseSettingsCheck</tabstop>
+  <tabstop>responsePacketBox</tabstop>
+  <tabstop>asciiResponseEdit</tabstop>
+  <tabstop>hexResponseEdit</tabstop>
+  <tabstop>ipv4Radio</tabstop>
+  <tabstop>ipv6Radio</tabstop>
+  <tabstop>multiSendDelayEdit</tabstop>
+  <tabstop>cancelResendNumEdit</tabstop>
+  <tabstop>attemptReceiveCheck</tabstop>
+  <tabstop>delayAfterConnectCheck</tabstop>
+  <tabstop>persistentTCPCheck</tabstop>
+  <tabstop>resolveDNSOnInputCheck</tabstop>
+  <tabstop>ignoreSSLCheck</tabstop>
+  <tabstop>serverSnakeOilCheck</tabstop>
+  <tabstop>sslCaPath</tabstop>
+  <tabstop>sslCaPathBrowseButton</tabstop>
+  <tabstop>sslLocalCertificatePath</tabstop>
+  <tabstop>sslLocalCertificatePathBrowseButton</tabstop>
+  <tabstop>sslPrivateKeyPath</tabstop>
+  <tabstop>sslPrivateKeyPathBrowseButton</tabstop>
+  <tabstop>displayOrderList</tabstop>
+  <tabstop>displayOrderListTraffic</tabstop>
+  <tabstop>defaultDisplayButton</tabstop>
+  <tabstop>copyUnformattedCheck</tabstop>
+  <tabstop>rolling500entryCheck</tabstop>
+  <tabstop>restoreSessionCheck</tabstop>
+  <tabstop>checkforUpdates</tabstop>
+  <tabstop>responseIfEdit1</tabstop>
+  <tabstop>responseReplyEdit1</tabstop>
+  <tabstop>responseEncodingBox1</tabstop>
+  <tabstop>responseEnableCheck1</tabstop>
+  <tabstop>responseIfEdit2</tabstop>
+  <tabstop>responseReplyEdit2</tabstop>
+  <tabstop>responseEncodingBox2</tabstop>
+  <tabstop>responseEnableCheck2</tabstop>
+  <tabstop>responseIfEdit3</tabstop>
+  <tabstop>responseReplyEdit3</tabstop>
+  <tabstop>responseEncodingBox3</tabstop>
+  <tabstop>responseEnableCheck3</tabstop>
+  <tabstop>responseIfEdit4</tabstop>
+  <tabstop>responseReplyEdit4</tabstop>
+  <tabstop>responseEncodingBox4</tabstop>
+  <tabstop>responseEnableCheck4</tabstop>
+  <tabstop>responseIfEdit5</tabstop>
+  <tabstop>responseReplyEdit5</tabstop>
+  <tabstop>responseEncodingBox5</tabstop>
+  <tabstop>responseEnableCheck5</tabstop>
+  <tabstop>settingsTabWidget</tabstop>
+  <tabstop>smartResponseEnableCheck</tabstop>
+  <tabstop>documentationButton</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>Settings</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>Settings</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <buttongroups>
+  <buttongroup name="buttonGroup"/>
+ </buttongroups>
+</ui>

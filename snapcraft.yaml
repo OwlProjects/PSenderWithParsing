@@ -1,0 +1,65 @@
+name: packetsender
+version: 8.6.5
+summary: Packet Sender - Free TCP/UDP/SSL/HTTP Utility
+icon: src/pslogo128.png
+description: |
+  Packet Sender - Free utility to for sending / receiving of network
+  packets. TCP, UDP, SSL, and HTTP.
+
+# sudo snap install packetsender*.snap --dangerous
+
+grade: stable
+base: core22
+confinement: strict
+architectures: [amd64]
+environment:
+  QT_PLUGIN_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt6/plugins"
+
+apps:
+  packetsender:
+    command: usr/local/bin/packetsender
+    desktop: usr/share/applications/packetsender.desktop
+
+    plugs:
+      - desktop
+      - desktop-legacy
+      - wayland
+      - x11
+      - home
+      - removable-media
+      - network
+      - cups
+    extensions: [gnome]
+      
+parts:
+  packetsender:
+    plugin: cmake
+    source: https://github.com/dannagle/PacketSender.git
+    source-branch: master
+    cmake-parameters:
+      - $SNAPCRAFT_PART_SRC/src
+    override-build: |
+      cp $SNAPCRAFT_PART_SRC/src/snap/CMakeLists.txt $SNAPCRAFT_PART_SRC/src/CMakeLists.txt
+      craftctl default
+
+    build-packages:
+      - build-essential
+      - qt6-base-dev
+      - libxkbcommon-dev
+      - libgl1-mesa-dev
+      - libglvnd-dev
+      - libssl-dev
+
+    stage-packages:
+      - libqt6core6
+      - libqt6gui6
+      - libqt6widgets6
+      - libqt6network6
+      - libqt6printsupport6
+      - libcurl4
+      - qt6-translations-l10n
+      - qt6-gtk-platformtheme
+      - qt6-qpa-plugins
+      - qt6-wayland
+      - cups-client
+      

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>test_contextmenu</class>
+ <widget class="QDialog" name="test_contextmenu">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>591</width>
+    <height>597</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QDialogButtonBox" name="buttonBox">
+   <property name="geometry">
+    <rect>
+     <x>500</x>
+     <y>10</y>
+     <width>81</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+   <property name="standardButtons">
+    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBoxCut">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>20</y>
+     <width>72</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Cut</string>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBoxCopy">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>20</y>
+     <width>72</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Copy</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBoxPaste">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>20</y>
+     <width>72</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Paste</string>
+   </property>
+  </widget>
+  <widget class="QTableView" name="tableViewPackets">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>190</y>
+     <width>561</width>
+     <height>231</height>
+    </rect>
+   </property>
+   <property name="gridStyle">
+    <enum>Qt::CustomDashLine</enum>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEditResult">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>490</y>
+     <width>331</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>test_contextmenu</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>500</x>
+     <y>60</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>test_contextmenu</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>500</x>
+     <y>60</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

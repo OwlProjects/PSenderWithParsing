@@ -1,0 +1,17 @@
+QTableView::item
+{
+    qproperty-wordWrap: false;
+}
+
+QStatusBar::item {
+    padding: 3px;
+    border-radius: 3px;
+} 
+
+/*
+QStatusBar QPushButton:hover,
+QStatusBar QPushButton:checked:hover{
+    border: 1px transparent #148CD2;
+}
+
+*/
