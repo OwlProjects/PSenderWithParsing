@@ -135,6 +135,8 @@ private slots:
 
         void on_chooseLanguageButton_clicked();
 
+        void on_pushButtonGetDLLPath_clicked();
+
 private:
         Ui::Settings *ui;
         QList<Packet> packetsSaved;
@@ -151,6 +153,8 @@ private:
         void deleteHTTPHeader(QString host, QString header);
         void clearHTTPHeaders(QString host);
         static QPair<QString, QString> header2keyvalue(QString header);
+
+        void CheckSettingsDLL();
 
 };
 

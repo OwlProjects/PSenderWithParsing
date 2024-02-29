@@ -58,10 +58,11 @@
 #include "panelgenerator.h"
 #include "wakeonlan.h"
 
+#include "InterfaceDLL.h"
 #include "dialoglogparser.h"
 #include "test_contextmenu.h"
-#include "test_qjson.h"
 #include "test_qjson_parsing.h"
+#include "test_dll.h"
 
 int hexToInt(QChar hex);
 void parserMajorMinorBuild(QString sw, unsigned int &major, unsigned int &minor, unsigned int &build);
@@ -471,7 +472,7 @@ MainWindow::MainWindow(QWidget *parent) :
     /*
      * Changes for Parsing
      */
-    connect(ui->parseTrafficLogButton, &QPushButton::released, this, &MainWindow::parseTrafficLogButton_onClick);
+    //connect(ui->parse_TrafficLogButton, &QPushButton::released, this, &MainWindow::parse_TrafficLogButton_onClick);
 
 
 
@@ -2846,22 +2847,44 @@ void MainWindow::on_actionTestContextMenu_triggered()
    test->show();
 }
 
-/**
- * @brief MainWindow::parseTrafficLogButton_onClick
- */
-void MainWindow::parseTrafficLogButton_onClick()
+void MainWindow::on_actionTest_JSON_triggered()
 {
-    QModelIndexList selection = ui->trafficLogTable->selectionModel()->selectedIndexes();
-    if (selection.count() > 0) {
-        int packetNumber = selection.first().row();
-        Packet curPacket = packetsLogged.getPacket(packetNumber);
-        DialogLogParser * pParserWindow = new DialogLogParser(this, "Traffic log parser", &curPacket);
-        pParserWindow->setModal(true);
-        pParserWindow->show();
-    }
+    test_QJSON_Parsing * test = new test_QJSON_Parsing( this );
+    test->show();
 }
 
-void MainWindow::on_actionTest_JSON_triggered() {
-    test_QJSON_Parsing * test = new test_QJSON_Parsing(this);
+void MainWindow::on_actionTest_DLL_triggered()
+{
+    test_DLL * test = new test_DLL( this );
     test->show();
+}
+
+void MainWindow::on_parseTrafficLogButton_clicked()
+{
+    QModelIndexList selection = ui->trafficLogTable->selectionModel()->selectedIndexes();
+    if ( selection.count() > 0 ) {
+        int packetNumber = selection.first().row();
+        Packet curPacket = packetsLogged.getPacket( packetNumber );
+        QSettings settings( SETTINGSFILE, QSettings::IniFormat );
+        QString pathDLL = settings.value( "PacketsParserDLLPath", QString() ).toString();
+        if ( !pathDLL.isEmpty() ) {
+            QLibrary lib( pathDLL );
+            if ( lib.load() ) {
+                WindowPacketParser_t pGetPacketParser = reinterpret_cast<WindowPacketParser_t>( lib.resolve( DLL_FUNCNAME_PACKETPARSER ) );
+                if ( pGetPacketParser ) {
+                    CLASS_WND_PACKETPARSER * pParserWindow = pGetPacketParser( this, curPacket.getByteArray() );
+                    pParserWindow->setModal( true );
+                    pParserWindow->show();
+                } else {
+                    QMessageBox::warning( this, "Packet parser error", "No function \"GetPacketModel\" in DLL" );
+                }                
+            } else {
+                QMessageBox::warning( this, "Packet parser error", "DLL file is not found or invalid" );
+            }
+        } else {
+            QMessageBox::warning( this, "Packet parser error", "Set DLL name in settings" );
+        }
+    } else {
+        QMessageBox::warning( this, "Packet parser error", "No packet selected" );
+    }
 }

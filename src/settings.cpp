@@ -1,6 +1,5 @@
 #include "settings.h"
 
-
 #include <QStringList>
 #include <QDebug>
 #include <QStringList>
@@ -10,6 +9,8 @@
 #include <QFile>
 #include <QHostAddress>
 #include <QStandardPaths>
+
+#include <QLibrary>
 
 
 #ifndef CONSOLE_BUILD
@@ -281,6 +282,9 @@ Settings::Settings(QWidget *parent) :
 
     }
 
+    // Parser DLL
+    QString pathDLL = settings.value( "PacketsParserDLLPath", "" ).toString();
+    ui->lineEditDLLPath->setText( pathDLL );
 
     setDefaultTableHeaders();
     setStoredTableHeaders();
@@ -474,7 +478,13 @@ void Settings::on_buttonBox_accepted()
 
 
     //smart responses...
-    settings.setValue("smartResponseEnableCheck", ui->smartResponseEnableCheck->isChecked());
+    settings.setValue( "smartResponseEnableCheck", ui->smartResponseEnableCheck->isChecked() );
+
+    // Packets parser DLL
+    QString pathDLL = ui->lineEditDLLPath->text();
+    if ( !pathDLL.isEmpty() ) {
+        settings.setValue( "PacketsParserDLLPath", pathDLL );
+    }
 
 #define RESPONSEIFSAVE(NUM) settings.setValue("responseIfEdit" #NUM, ui->responseIfEdit##NUM->text());
 
@@ -531,7 +541,6 @@ void Settings::on_hexResponseEdit_textEdited(const QString &arg1)
     ui->asciiResponseEdit->setText(Packet::hexToASCII(quicktestHex));
 
 }
-
 
 QStringList Settings::defaultPacketTableHeader()
 {
@@ -609,7 +618,6 @@ QList<int> Settings::portsToIntList(QString ports)
 }
 
 #ifndef CONSOLE_BUILD
-
 
 void Settings::setDefaultTableHeaders()
 {
@@ -708,7 +716,6 @@ void Settings::on_defaultDisplayButton_clicked()
 
 }
 
-
 void Settings::on_smartResponseEnableCheck_clicked()
 {
 
@@ -775,8 +782,6 @@ void Settings::on_documentationButton_clicked()
     QDesktopServices::openUrl(QUrl("https://packetsender.com/documentation"));
 }
 
-
-
 void Settings::saveHTTPHeader(QString host, QString header)
 {
     QSettings settings(SETTINGSFILE, QSettings::IniFormat);
@@ -809,8 +814,6 @@ void Settings::saveHTTPHeader(QString host, QString header)
 
 }
 
-
-
 void Settings::deleteHTTPHeader(QString host, QString header)
 {
     QSettings settings(SETTINGSFILE, QSettings::IniFormat);
@@ -826,7 +829,8 @@ void Settings::deleteHTTPHeader(QString host, QString header)
     }
 
 }
-#endif
+
+#endif // CONSOLE_BUILD
 
 QPair<QString, QString> Settings::header2keyvalue(QString header)
 {
@@ -849,7 +853,6 @@ QPair<QString, QString> Settings::header2keyvalue(QString header)
 
 }
 
-
 QHash<QString, QString> Settings::getRawHTTPHeaders(QString host)
 {
     QHash<QString, QString> headers;
@@ -870,7 +873,6 @@ bool Settings::detectJSON_XML()
     QSettings settings(SETTINGSFILE, QSettings::IniFormat);
     return settings.value("httpAdjustContentTypeCheck", true).toBool();
 }
-
 
 QStringList Settings::getHTTPHeaders(QString host)
 {
@@ -907,7 +909,6 @@ void Settings::clearHTTPHeaders(QString host)
     }
 }
 
-
 void Settings::on_addCredentialButton_clicked()
 {
     QString host = ui->httpHostEdit->text();
@@ -927,7 +928,6 @@ void Settings::on_addCredentialButton_clicked()
     loadCredentialTable();
 
 }
-
 
 void Settings::loadCredentialTable()
 {
@@ -983,9 +983,6 @@ void Settings::loadCredentialTable()
     httpSettingsLoading = false;
 }
 
-
-
-
 void Settings::on_httpDeleteHeaderButton_clicked()
 {
 
@@ -999,7 +996,6 @@ void Settings::on_httpDeleteHeaderButton_clicked()
     ui->httpCredentialTable->clearSelection();
     loadCredentialTable();
 }
-
 
 void Settings::on_httpCredentialTable_itemChanged(QTableWidgetItem *item)
 {
@@ -1059,4 +1055,38 @@ void Settings::on_chooseLanguageButton_clicked()
 #endif
 
 }
+
+
+void Settings::on_pushButtonGetDLLPath_clicked()
+{
+    QString path = QFileDialog::getOpenFileName( this, "Open Parser DLL", QDir::currentPath(), "library (*.DLL, *.dll)" );
+    if ( !path.isEmpty() ) {
+        ui->lineEditDLLPath->setText( path );        
+    }
+}
+
+/*
+void Settings::on_pushButtonCheckDLL_clicked()
+{
+    CheckSettingsDLL();
+}
+
+void Settings::CheckSettingsDLL()
+{
+    QString pathDLL = ui->lineEditDLLPath->text();
+    if ( !pathDLL.isEmpty() ) {
+        QLibrary lib(pathDLL);
+        if ( lib.load() ) {
+            if ( lib.resolve( "GetPacketModel" ) ) {
+                ui->label_CheckDLLResult->setText( " DLL interface is valid " );
+            } else {
+                ui->label_CheckDLLResult->setText( " No function \"GetPacketModel\" in DLL " );
+            }
+            lib.unload();
+        } else {
+            ui->label_CheckDLLResult->setText( " DLL file is not found or invalid  " );
+        }
+    }
+}
+*/
 

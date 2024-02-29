@@ -7,6 +7,8 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QJsonObject>
+#include <QDir>
+#include <QFileDialog>
 
 
 
@@ -115,3 +117,11 @@ void test_QJSON_Parsing::pushButtonGetPathFileJSON_onClick( void ) {
 }
 
 
+
+void test_QJSON_Parsing::on_pushButtonGetPathFileJSON_clicked()
+{
+    QString path = QFileDialog::getOpenFileName( this, "Open Parser DLL", QDir::currentPath(), "library (*.DLL, *.dll)" );
+    if ( !path.isEmpty() ) {
+        ui->lineEditPathFileJSON->setText( path );
+    }
+}

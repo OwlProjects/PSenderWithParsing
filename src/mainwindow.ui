@@ -444,6 +444,11 @@
           </item>
           <item>
            <widget class="QPushButton" name="parseTrafficLogButton">
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+    min-width: 30px;
+}</string>
+            </property>
             <property name="text">
              <string>Parse</string>
             </property>
@@ -583,6 +588,7 @@
     </property>
     <addaction name="actionTestContextMenu"/>
     <addaction name="actionTest_JSON"/>
+    <addaction name="actionTest_DLL"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuTools"/>
@@ -778,6 +784,11 @@
   <action name="actionTest_JSON">
    <property name="text">
     <string>Test JSON</string>
+   </property>
+  </action>
+  <action name="actionTest_DLL">
+   <property name="text">
+    <string>Test DLL</string>
    </property>
   </action>
  </widget>

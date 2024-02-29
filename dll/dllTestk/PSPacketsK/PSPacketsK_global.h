@@ -1,0 +1,12 @@
+#ifndef PSPACKETSK_GLOBAL_H
+#define PSPACKETSK_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(PSPACKETSK_LIBRARY)
+#  define PSPACKETSK_EXPORT Q_DECL_EXPORT
+#else
+#  define PSPACKETSK_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // PSPACKETSK_GLOBAL_H

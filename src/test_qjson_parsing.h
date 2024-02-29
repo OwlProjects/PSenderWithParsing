@@ -20,6 +20,8 @@ private slots:
 /*
  * public methods
  */
+    void on_pushButtonGetPathFileJSON_clicked();
+
 public:
     explicit test_QJSON_Parsing(QWidget *parent = nullptr);
     ~test_QJSON_Parsing();

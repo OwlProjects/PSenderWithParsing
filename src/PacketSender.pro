@@ -30,7 +30,7 @@ SOURCES += mainwindow.cpp \
     cloudui.cpp \
     multicastsetup.cpp \
     test_contextmenu.cpp \
-    test_qjson.cpp \
+    test_dll.cpp \
     test_qjson_parsing.cpp \
     udpflooding.cpp \
     packetlogmodel.cpp \
@@ -40,9 +40,9 @@ SOURCES += mainwindow.cpp \
     wakeonlan.cpp
 
 HEADERS  += mainwindow.h \
+    InterfaceDLL.h \
     dialoglogparser.h \
     languagechooser.h \
-    packetlogparsermodel.h \
     panel.h \
     sendpacketbutton.h \
     brucethepoodle.h \
@@ -53,7 +53,7 @@ HEADERS  += mainwindow.h \
     cloudui.h \
     multicastsetup.h \
     test_contextmenu.h \
-    test_qjson.h \
+    test_dll.h \
     test_qjson_parsing.h \
     udpflooding.h \
     packetlogmodel.h \
@@ -61,8 +61,6 @@ HEADERS  += mainwindow.h \
     panelgenerator.h \
     persistenthttp.h \
     wakeonlan.h
-
-
 
 FORMS    += mainwindow.ui \
     brucethepoodle.ui \
@@ -76,7 +74,7 @@ FORMS    += mainwindow.ui \
     cloudui.ui \
         multicastsetup.ui \
     test_contextmenu.ui \
-    test_qjson.ui \
+    test_dll.ui \
     test_qjson_parsing.ui \
     udpflooding.ui \
         persistenthttp.ui \
@@ -84,8 +82,12 @@ FORMS    += mainwindow.ui \
     panelgenerator.ui \
     wakeonlan.ui
 
-
 include(packetsender_main.pri)
+
+INCLUDEPATH += ..\..\dll\dllClass\dllClass
+DEPENDPATH += ..\..\dll\dllClass\dllClass
+
+LIBS += debug\dllClass.dll
 
 DISTFILES +=
 

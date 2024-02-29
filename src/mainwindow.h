@@ -236,11 +236,13 @@ class MainWindow : public QMainWindow
         void on_actionTest_JSON_triggered();
 
         /*
-         * Changes for KACAK-H
+         * Changes for Parser
          */
-        void parseTrafficLogButton_onClick();
+        void on_actionTest_DLL_triggered();
 
-    private:
+        void on_parseTrafficLogButton_clicked();
+
+private:
         Ui::MainWindow *ui;
         QSortFilterProxyModel *proxyModel;
         PacketLogModel packetsLogged;

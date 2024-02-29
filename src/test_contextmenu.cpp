@@ -102,10 +102,10 @@ void test_contextmenu::customMenuRequested(QPoint pos)
 {
     QMenu * menu = new QMenu( this );
     QAction * actionGetResult = new QAction( tr("Get result"), this );
-    connect( actionGetResult, &QAction::triggered, this, [=](){ test_contextmenu::GetResult(pos); } );
+    connect( actionGetResult, &QAction::triggered, this, [=]{ test_contextmenu::GetResult(pos); } );
     //menu->addAction(new QAction("Action 1", this));
     menu->addAction( actionGetResult );
-    menu->addAction( new QAction("Action 2", this) );
-    menu->addAction( new QAction("Action 3", this) );
+    menu->addAction( new QAction( "Action 2", this ) );
+    menu->addAction( new QAction( "Action 3", this ) );
     menu->popup( ui->tableViewPackets->viewport()->mapToGlobal(pos) );
 }
