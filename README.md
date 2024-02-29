@@ -167,6 +167,10 @@ By default, Packet Sender launches with UDP, TCP, and SSL servers enabled on ran
 
 ![Basic Network Settings](screenshots/basic_network_settings.png)
 
+There is new setting in this version - path to DLL with packet parser
+![Basic DLL Settings](docs/settings_view.png)
+
+
 The UDP button now shows 3 ports bound. 1 of them is random.
 
 ![Bound UDP Example](screenshots/bound_udp_example.png)
